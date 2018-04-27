@@ -12,6 +12,20 @@ How do you structure it? What plugin manager do you use? What's airline? Who's t
 
 These are the questions the intended audience will probably be asking themselves.
 
+## What do you get?
+
+ * [Really useful plugins](https://github.com/Olical/spacy-neovim/blob/master/plugins.vim)
+ * [Linting](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/ale.vim)
+ * [Autocompletion](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/deoplete.nvim.vim)
+ * [Fuzzy matching of almost everything](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/fzf.vim) (just like helm)
+ * [Clojure tooling](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-fireplace.vim)
+ * [Scheme tooling](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-scheme.vim)
+ * [Useful mappings](https://github.com/Olical/spacy-neovim/blob/master/modules/mappings.vim)
+ * [Git integration](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-fugitive.vim)
+ * [Undo tree visualisation](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-mundo.vim)
+
+Follow the links to the relevant source to see what I've bound these features to by default. Obviously you can change them to whatever works for you.
+
 ## How do I get it?
 
  1. Clone your fork of this repository into `~/.config/nvim/`
@@ -22,29 +36,18 @@ These are the questions the intended audience will probably be asking themselves
 
 You'll want to run `sync.sh` whenever you change your `plugins.vim` list or if you just want to update all of your current plugins.
 
+[ripgrep][] and [fzf][] are used for findings things extremely quickly so make sure you have those installed. You'll probably want to configure fzf to use ripgrep too, I use these lines in my [fish][] config.
+
+```fish
+set -gx FZF_DEFAULT_COMMAND "rg --files --hidden --follow -g \"!.git/\" 2> /dev/null"
+set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+```
+
 ## Plugins?
 
 Plugin management is provided by the wonderful [vim-plug][]. I've set things up so all you need to do is regularly run `sync.sh` to keep things up to date and alter `plugins.vim` to add or remove plugins.
 
-To learn about the current plugins you can use the `:help` command in Neovim or just put the `username/repo` combination from `plugins.vim` into GitHub.
-
 Configuration for your plugins should go under `modules/plugins/NAME.vim` where `NAME` is the exact repo name of the plugin. If you remove a plugin from `plugins.vim` but forget to remove the appropriate config file my script will warn you.
-
-## Bindings?
-
-Here's a selection of bindings that you may find useful coming from Spacemacs:
-
- * `<space>fs` - write the current buffer to disk
- * `<space>gs` - open [fugitive][], the awesome git interface (a bit like magit)
- * `<space>gl` - perform a git pull
- * `<space>gp` - perform a git push
- * `<space>pf` - search your files with [CtrlP][] and [Ag][] (a bit like projectile)
- * `<space>pb` - browse your current buffers in the same way
- * `<space><space>` - followed by any motion will fling you around the screen with [EasyMotion][]
-
-There's way more to discover in the source of the [vim-better-default][] plugin, which is included already.
-
-I highly encourage you to explore the plugins and source code to discover more, this list is far from exhaustive.
 
 ## Who's this from?
 
@@ -73,8 +76,6 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [spacemacs]: http://spacemacs.org/
 [clojure]: https://clojure.org/
 [vim-plug]: https://github.com/junegunn/vim-plug
-[vim-better-default]: https://github.com/liuchengxu/vim-better-default
-[fugitive]: https://github.com/tpope/vim-fugitive
-[ctrlp]: https://github.com/ctrlpvim/ctrlp.vim
-[ag]: https://github.com/ggreer/the_silver_searcher
-[easymotion]: https://github.com/easymotion/vim-easymotion
+[fzf]: https://github.com/junegunn/fzf
+[ripgrep]: https://github.com/BurntSushi/ripgrep
+[fish]: https://fishshell.com
