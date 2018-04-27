@@ -4,6 +4,8 @@ A base [Neovim][] configuration template inspired by [Spacemacs][].
 
 Please fork and modify the repository to suit your needs, you can build your own Neovim on top of this (subjectively) cool starting point.
 
+![](screenshots/splits-and-fzf.png)
+
 ## Who's it for?
 
 If you're currently using Spacemacs for [Clojure][] (or any other language, Clojure is just my favourite) and you feel like trying out Neovim, you may feel overwhelmed and alienated at first. You don't know where to start building your own Neovim configuration.
