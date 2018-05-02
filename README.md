@@ -25,6 +25,7 @@ These are the questions the intended audience will probably be asking themselves
  * [Useful mappings](https://github.com/Olical/spacy-neovim/blob/master/modules/mappings.vim)
  * [Git integration](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-fugitive.vim)
  * [Undo tree visualisation](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-mundo.vim)
+ * [Effortlessly jump around your code](https://github.com/Olical/spacy-neovim/blob/master/modules/plugins/vim-easymotion.vim)
 
 Follow the links to the relevant source to see what I've bound these features to by default. Obviously you can change them to whatever works for you.
 
